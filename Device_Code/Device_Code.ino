@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
 
 //Create the global variables
 int score, time, playing;
+//16x2 display, I2C address
+LiquidCrystal_I2C lcd(0x27,16,2);
 
 //Define the pins
 #define SOLDER_PIN 4
@@ -16,6 +21,12 @@ typedef enum {
 } COMMAND;
 
 void setup() {
+  // set up LCD
+  lcd.begin(16, 2);
+  lcd.backlight();
+  lcd.print("Number: ");
+  delay(2000);
+
   //Connect to the serial monitor
   Serial.begin(9600);
 
@@ -31,6 +42,16 @@ void setup() {
   pinMode(CODE_PIN, INPUT);
   pinMode(MULTIMETER_PIN, INPUT);
 
+}
+
+void displaynumber(int num){
+  // Move cursor to the second row
+  lcd.setCursor(0,1);
+  //clear previous number
+  lcd.print("  ");
+
+  lcd.setCursor(0,1);
+  lcd.print(num);
 }
 
 void loop() {
