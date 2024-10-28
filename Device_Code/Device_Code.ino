@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-#include <SD.h>
-#include <TMRpcm.h>
-#include <SPI.h>
+#include <SoftwareSerial.h>
+#include <DFRobot_DF1201S.h>
 
 typedef enum {
     SOLDER_IT,
@@ -14,9 +13,9 @@ typedef enum {
 
 //16x2 display, I2C address
 LiquidCrystal_I2C lcd(0x27,16,2);
-//Define SD pins
-#define SD_ChipSelectPin 10
-TMRcpm tmrcpm;
+
+//Set up SD mp3 player
+SoftwareSerial DF1201SSerial(15, 16); //RX TX
 
 //Define the pins
 #define SOLDER_PIN 4
@@ -35,9 +34,34 @@ void setup() {
   lcd.backlight();
   lcd.print("Score: ");
   delay(2000);
-
+  
   //Connect to the serial monitor
   Serial.begin(9600);
+
+  Serial.begin(115200);
+  DF120SSerial.begin(115200);
+
+  while(!DF1201S.begin(DF1201SSerial)){
+    Serial.println("Init failed, please check the wire connection!");
+    delay(1000);
+  }
+
+  //set volume
+  DF1201S.setVol(/*VOL = */20);
+  Serial.print("VOL:");
+
+  //get volume
+  Serial.println(DF1201S.getVol());
+
+  //switch function to play music
+  DF1201S.switchFunction(DF1201S.MUSIC);
+  delay(2000);
+
+  DF1201S.setPlayMode(DF1201S.ALLCYCLE);
+  Serial.print("PlayMode:");
+
+  //get playback mode
+  Serial.println(DF1201S.getPlayMode());
 
   Serial.println("Startup");
 
@@ -67,7 +91,9 @@ void displaynumber(int num){
 void loop() {
 
   displaynumber(99);
-
+  //Play the file No.1, the numbers are arranged according to the sequence of the files copied into the U-disk 
+  DF1201S.playFileNum(/*File Number = */1);
+  
   // //If the on button is pressed, turn the playing variable on so that the game starts and reset gameOver
   // if(digitalRead(ON_BUTTON) == HIGH){
   //   gameOver = false;
