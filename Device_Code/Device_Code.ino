@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-
+#include <SD.h>
+#include <TMRpcm.h>
+#include <SPI.h>
 
 typedef enum {
     SOLDER_IT,
@@ -14,6 +16,9 @@ typedef enum {
 int score, time, playing;
 //16x2 display, I2C address
 LiquidCrystal_I2C lcd(0x27,16,2);
+//Define SD pins
+#define SD_ChipSelectPin 10
+TMRcpm tmrcpm;
 
 //Define the pins
 #define SOLDER_PIN 4
@@ -61,6 +66,25 @@ void displaynumber(int num){
   lcd.print(num);
 }
 
+//intialize SD card
+if(!SD.begin(SD_ChipSelectPin){
+    Serial.println("SD card intialization failed);
+    return;
+}
+    Serial.println("SD card is ready to use.");
+    //Setup TMRpcm
+    tmrpcm.speakerPin = 9;
+}
+
+ void playSound(const char* fileName){
+    if(tmrpcm.isPlaying()){
+      //stops dound, keeps timer running
+      tmrpcm.stopPlayback(); 
+    }
+    tmrpcm.play(fileName);
+  }
+}
+
 void loop() {
 
   //If the on button is pressed, turn the playing variable on so that the game starts and reset gameOver
@@ -88,6 +112,7 @@ void loop() {
             Serial.println("Correct Action");
             score++;
           //Otherwise, set gameOver to true
+              playSound("hello.wav");
           }else{
             gameOver = true;
           }
