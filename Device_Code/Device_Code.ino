@@ -64,25 +64,6 @@ void displaynumber(int num){
   lcd.print(num);
 }
 
-//intialize SD card
-if(!SD.begin(SD_ChipSelectPin){
-    Serial.println("SD card intialization failed);
-    return;
-}
-    Serial.println("SD card is ready to use.");
-    //Setup TMRpcm
-    tmrpcm.speakerPin = 9;
-}
-
- void playSound(const char* fileName){
-    if(tmrpcm.isPlaying()){
-      //stops dound, keeps timer running
-      tmrpcm.stopPlayback(); 
-    }
-    tmrpcm.play(fileName);
-  }
-}
-
 void loop() {
 
   displaynumber(99);
