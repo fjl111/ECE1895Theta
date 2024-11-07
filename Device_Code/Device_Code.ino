@@ -27,6 +27,7 @@ DFRobotDFPlayerMini myDFPlayer;
 //Create the global variables
 int score, time, playing;
 int starttime, endtime;
+int timeLimit;
 bool gameOver, correctChoice;
 COMMAND currentTask;
 
@@ -78,6 +79,32 @@ void displaynumber(int num){
   lcd.print(num);
 }
 
+COMMAND generateCommand(){
+  //Generate a random number (1, 2, or 3) to choose a random behavior
+  long randNum = random(1, 4);
+
+  //Choose the command based on the randomly generated number. 
+  //Play the associated sound and return the command
+  switch(randNum){
+    case 1:
+      Serial.println("Solder It");
+      myDFPlayer.playMp3Folder(/*File Number = */1);
+      return SOLDER_IT;
+    case 2:
+      Serial.println("Code It");
+      myDFPlayer.playMp3Folder(/*File Number = */2);
+      return CODE_IT;
+    case 3:
+      Serial.println("Multimeter It");
+      myDFPlayer.playMp3Folder(/*File Number = */3);
+      return MULTIMETER_IT;
+    default:
+      Serial.println("ERROR: random number out of range");
+      myDFPlayer.playMp3Folder(/*File Number = */4);
+      return SOLDER_IT;
+  }
+}
+
 void loop() {
 
   //Play the file No.1, the numbers are arranged according to the sequence of the files copied into the U-disk 
@@ -107,7 +134,7 @@ void loop() {
       starttime = millis();
       endtime = starttime;
       //Check the input while the time is counting down
-      while((starttime-endtime) < time_limit){
+      while((starttime-endtime) < timeLimit){
         //Once we receive a command check if it matches the randomly generated command
         //If it does, break out of the loop and continue. If it doesn't break out of the loop and end the game
         Serial.println("Waiting for input");
