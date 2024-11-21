@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=U1 NewDesignator=U3
+Added Member To Class: ClassName=BopIt Member=Component U3 5V Regulator
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
