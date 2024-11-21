@@ -1,0 +1,32 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [BopIt.PrjPcb]
+   Generated File[BopIt_Legend_Top.gbr]
+   Generated File[BopIt_Paste_Top.gbr]
+   Generated File[BopIt_Soldermask_Top.gbr]
+   Generated File[BopIt_Copper_Signal_Top.gbr]
+   Generated File[BopIt_Copper_Signal_Bot.gbr]
+   Generated File[BopIt_Soldermask_Bot.gbr]
+   Generated File[BopIt_Paste_Bot.gbr]
+   Generated File[BopIt_Top_3D_Body.gbr]
+   Generated File[BopIt_Top_Courtyard.gbr]
+   Generated File[BopIt_Top_Designator.gbr]
+   Generated File[BopIt_Top_Assembly.gbr]
+   Generated File[BopIt_Top_Component_Outline.gbr]
+   Generated File[BopIt_Mechanical_13.gbr]
+   Generated File[BopIt_Mechanical_15.gbr]
+   Generated File[BopIt_Top_Component_Center.gbr]
+   Generated File[BopIt_Keep-out.gbr]
+   Generated File[BopIt_Pads_Top.gbr]
+   Generated File[BopIt_Pads_Bot.gbr]
+   Generated File[BopIt_Drawing_1.gbr]
+   Generated File[BopIt_Drillmap_1.gbr]
+   Generated File[BopIt_Profile.gbr]
+   Generated File[BopIt.EXTREP]
+   Generated File[BopIt.REP]
+
+
+Files Generated   : 23
+Documents Printed : 0
+
+Finished Output Generation At 12:13:11 AM On 10/31/2024
