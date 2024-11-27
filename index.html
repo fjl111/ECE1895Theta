@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE Bop-It Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #f4f4f9;
+            margin-top: 2rem;
+        }
+        .image-caption {
+            font-size: 0.9em;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ECE Bop-It Project</h1>
+        <p>Design Project 2: A Day in the Life of an ECE Student</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Introduction</h2>
+            <p>For our second design project, our team was tasked with drawing inspiration from the classic childhood game Bop-It and putting our own unique twist on the concept. The final design integrates tasks that simulate common activities and techniques we use daily in our coursework and labs, combining creative problem-solving with technical challenges to provide a fun yet educational experience.</p>
+        </section>
+
+        <section>
+            <h2>Original Design Concepts</h2>
+            <p>In the early stages, we considered various approaches. For example, we thought of requiring the user to input key presses in a specific order for the Code-It command but opted for a simpler design based on user feedback. Challenges and adjustments are detailed further in the report.</p>
+        </section>
+
+        <section>
+            <h2>Final Design</h2>
+            <h3>Features</h3>
+            <ul>
+                <li><strong>Multimeter-It:</strong> Measure resistance using multimeter probes.</li>
+                <li><strong>Code-It:</strong> Press a set of keycaps connected to an Arduino.</li>
+                <li><strong>Solder-It:</strong> Touch a soldering iron to a designated pad to complete a connection.</li>
+            </ul>
+
+            <figure>
+                <img src="path/to/preliminary-sketch.jpg" alt="Preliminary Sketch">
+                <figcaption class="image-caption">Figure 1: Preliminary Sketch</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Design Verification</h2>
+            <p>The design underwent incremental prototyping and testing. A breadboard prototype helped validate the circuit and software before transitioning to a PCB. Issues like analog value fluctuations in the multimeter input were resolved with software solutions.</p>
+
+            <figure>
+                <img src="path/to/breadboard-prototype.jpg" alt="Breadboard Prototype">
+                <figcaption class="image-caption">Figure 2: Breadboard Prototype</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Electronic Design Implementation</h2>
+            <p>The PCB was carefully designed to include all necessary components while adhering to cost, size, and functionality constraints. Key features include capacitors, LEDs, a reset button, and a serial header for debugging.</p>
+
+            <figure>
+                <img src="path/to/main-pcb-schematic.jpg" alt="Main PCB Schematic">
+                <figcaption class="image-caption">Figure 3: Main PCB Schematic</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Software Implementation</h2>
+            <p>The software, written in C, manages user interactions, random command generation, and feedback through audio and visual indicators. Debugging tools like serial output were used extensively during development.</p>
+        </section>
+
+        <section>
+            <h2>Enclosure Design</h2>
+            <p>The enclosure was designed with portability and usability in mind. Features include a removable panel for battery replacement and a custom layout for components.</p>
+        </section>
+
+        <section>
+            <h2>Team Contributions</h2>
+            <p>Team members Fredrick Laudati, Leslie McDonough, and Jill Zitcovich collaborated on all aspects of the project, from design and hardware to software development.</p>
+        </section>
+
+        <section>
+            <h2>Conclusion and Future Work</h2>
+            <p>Future iterations could include a clear acrylic enclosure, additional resistors for teaching color codes, and a volume control knob.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 ECE Bop-It Project Team</p>
+    </footer>
+</body>
+</html>
