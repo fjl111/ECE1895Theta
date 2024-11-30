@@ -2,6 +2,8 @@
 A Day in the Life of an ECE Student Bop-It
 Created by Jack Laudati, Leslie McDonough, and Jill Zitcovich
 
+Please visit this site to see a detailed report of the project: https://fjl111.github.io/ECE1895Theta/
+
 See the Device_Code folder for the C code that controls the flow of the game on the bop-it device.
 
 See the Altium Files folder for all of the PCB and schematic documents. The BopIt.SchDoc and BopIt.PcbDoc detail the main PCB that drives the functionality of the toy. codeSchematic.SchDoc and codePCB.PcbDoc detail the breakout board with the keycaps.
